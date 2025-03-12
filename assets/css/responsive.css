@@ -214,16 +214,26 @@
 }
 
 /* ========== Tablet ========== */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 576px) and (max-width: 991px) {
   .mobile-only {
     display: none;
   }
 }
 
 /* ========== Mobile ========== */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 576.98px) {
   .hide-on-mobile {
     display: none;
+  }
+
+  .menu-drawer {
+    padding: 30px;
+    inset: 0 25% 0 0;
+  }
+
+  .menu-drawer ul a {
+    padding: 18px 0;
+    font-size: 2rem;
   }
 
   .navbar {
@@ -289,7 +299,7 @@
   }
 
   .newsletter .body {
-    padding: 28px;
+    padding: 32px;
   }
 
   .newsletter .sub-title {
