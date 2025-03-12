@@ -91,26 +91,47 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
   </head>
   <body>
-    <!-- Sticky Header -->
+    <!-- Desktop Header -->
     <header class="sticky-header">
       <div class="content">
         <nav class="navbar">
+          <!-- Tablet/Mobile Menu Icon -->
+          <label for="menu-checkbox" class="burger-menu"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path fill="currentColor"" d="M0 96C0 78.3 14.3 64 32 64l384
+              0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0
+              96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3
+              32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32
+              32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3
+              32 32z" />
+            </svg></label
+          >
+
           <!-- Logo -->
-          <a href="#"><img src="./assets/img/logo.svg" alt="Besnik Logo" /></a>
+          <a class="logo" href="#"
+            ><img src="./assets/img/logo.svg" alt="Besnik Logo"
+          /></a>
 
           <!-- Navigation -->
-          <ul>
+          <ul id="pc-nav">
             <li><a href="#">Home</a></li>
             <li><a href="#clients">Clients</a></li>
             <li><a href="#guides">Guides</a></li>
             <li><a href="#featured">Featured</a></li>
             <li><a href="#stats">Stats</a></li>
+            <li class="mobile-only menu-divider">
+              <a href="#!">Sign In</a>
+            </li>
+            <li class="mobile-only">
+              <a href="#!">Sign Up</a>
+            </li>
           </ul>
 
           <!-- Actions -->
-          <div class="actions">
+          <div class="hide-on-mobile actions">
             <a href="#!" class="action-link">Sign in</a>
             <a href="#!" class="btn action-btn">Sign up</a>
           </div>
@@ -118,6 +139,41 @@
       </div>
     </header>
 
+    <!-- Tablet/Mobile Header -->
+    <header class="mobile-header">
+      <input
+        type="checkbox"
+        name=""
+        id="menu-checkbox"
+        class="menu-checkbox"
+        hidden
+      />
+      <!-- Overlay -->
+      <label for="menu-checkbox" class="menu-overlay"></label>
+      <!-- Drawer -->
+      <div class="menu-drawer">
+        <!-- Logo -->
+        <a class="" href="#">
+          <img src="./assets/img/logo.svg" alt="Besnik Logo" />
+        </a>
+        <!-- Navigation -->
+        <ul id="mobile-nav"></ul>
+        <script>
+          // ========= Code from Copilot =========
+          // const pcNavItems = document.querySelectorAll("#pc-nav li");
+          // const mobileNav = document.getElementById("mobile-nav");
+          // pcNavItems.forEach((item) => {
+          //   const clonedItem = item.cloneNode(true);
+          //   mobileNav.appendChild(clonedItem);
+          // });
+
+          // ========= Code from F8 =========
+          const pcNav = document.querySelector("#pc-nav");
+          const mobileNav = document.querySelector("#mobile-nav");
+          mobileNav.innerHTML = pcNav.innerHTML;
+        </script>
+      </div>
+    </header>
     <!-- Main -->
     <main>
       <!-- Hero Section -->
@@ -151,7 +207,7 @@
           </div>
           <div class="row row-desc">
             <p class="desc">More than 45,000+ companies trust besnik</p>
-            <p class="desc">5 Star Ratings (2k+ Review)</p>
+            <p class="desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
           </div>
           <div class="images">
             <a href="#!">
@@ -334,6 +390,11 @@
                 </div>
               </div>
             </div>
+
+            <!-- Item 4 (Tablet Only) -->
+            <a href="#!" class="item view-all-card tablet-only">
+              View All Properties
+            </a>
           </div>
         </div>
       </div>
@@ -495,7 +556,7 @@
               </p>
             </div>
           </div>
-          <div class="row row-qty">
+          <div class="row-qty">
             <div class="qty-item">
               <strong class="qty">2,500</strong>
               <p class="qty-desc">Homes For Sale</p>
@@ -593,7 +654,7 @@
             </div>
           </div>
         </div>
-        <div class="row row-bottom">
+        <div class="row-bottom">
           <img class="logo" src="./assets/img/logo.svg" alt="Besnik" />
           <p class="copyright">Copyright 2020.com, All rights reserved.</p>
         </div>
